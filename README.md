@@ -1,4 +1,4 @@
-# hoban-file-manager
+# electron-file-manager
 File manager created on Electron/React/Redux (Windows, in future cross-browser).
 
 Non-release version.
