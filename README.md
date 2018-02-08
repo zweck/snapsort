@@ -15,7 +15,7 @@ Featured need to implement:
 - Zoomin and zoom out of files system (visualization)
 - Drag'n'drop between folders
 
-# Steps to run
-npm i
-npm run start
-npm run electron
+# Steps to run:
+- npm i
+- npm run start
+- npm run electron
