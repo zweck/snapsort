@@ -38,32 +38,44 @@ class FileExplorer extends Component {
 	}
 
 	render() {
+    const {
+      copyRequest,
+      moveRequest,
+      pasteRequest,
+      saveDestPath,
+      copyMovePaths,
+      levelData
+    } = this.props
 		const {toCopy, toMove} = this.props.copyMovePaths;
 		return (
 			<div className="file-explorer">
 				<div className="file-explorer__navigation">
 					<div>
-						<BackButton updateCurrentPath={this.updateCurrentPath}
-												currentPath={this.state.currentPath} />
-						<FileExplorerBreadcrumbs currentPath={this.state.currentPath}
-																		 updateCurrentPath={this.updateCurrentPath}/>
+						<BackButton
+              updateCurrentPath={this.updateCurrentPath}
+							currentPath={this.state.currentPath} />
+						<FileExplorerBreadcrumbs
+              currentPath={this.state.currentPath}
+              updateCurrentPath={this.updateCurrentPath}/>
 					</div>
 					<div>
 						{this.props.copyMovePaths.status === 'inprogress' ? <Spinner /> : ''}
-						<button disabled={!toCopy && !toMove}
-										onClick={this.clickPasteButtonHandler.bind(this)}
-										className="waves-effect waves-light btn paste-btn">Paste</button>
+						<button
+              disabled={!toCopy && !toMove}
+              onClick={this.clickPasteButtonHandler.bind(this)}
+              className="waves-effect waves-light btn paste-btn">Paste</button>
 					</div>
 				</div>
 				<FileExplorerTree
+          selectImage={this.props.selectImage}
 					currentPath={this.state.currentPath}
 					updateCurrentPath={this.updateCurrentPath}
-					copyRequest={this.props.copyRequest}
-					moveRequest={this.props.moveRequest}
-					pasteRequest={this.props.pasteRequest}
-					saveDestPath={this.props.saveDestPath}
-					copyMovePaths={this.props.copyMovePaths}
-					treeData={this.props.levelData[this.state.currentPath]} />
+					copyRequest={copyRequest}
+					moveRequest={moveRequest}
+					pasteRequest={pasteRequest}
+					saveDestPath={saveDestPath}
+					copyMovePaths={copyMovePaths}
+					treeData={levelData[this.state.currentPath]} />
 			</div>
 
 		);

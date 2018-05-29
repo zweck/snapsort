@@ -12,7 +12,7 @@
 
 .file-explorer .collection a.collection-item {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .file-explorer__navigation {
@@ -52,4 +52,9 @@
     top: 10px;
     right: 10px;
     z-index: 100;
+}
+
+.icon {
+  color: #ee6e73;
+  padding-right: 1.5rem;
 }

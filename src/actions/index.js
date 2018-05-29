@@ -1,5 +1,6 @@
 import { ipcRenderer } from 'electron';
 import {
+  SELECT_IMAGE,
 	LEVEL_DATA_REQUEST,
 	LEVEL_DATA_RECEIVED,
 	COPY_REQUEST,
@@ -64,3 +65,10 @@ export const saveDestPath = path => dispatch => {
 		dest: path
 	});
 };
+
+export const selectImage = path => dispatch => {
+  dispatch({
+    type: SELECT_IMAGE,
+    path
+  })
+}

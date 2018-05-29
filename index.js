@@ -7,7 +7,7 @@ const diskinfo = require('diskinfo');
 
 const { app, BrowserWindow, ipcMain } = electron;
 const lstat = promisify(fs.lstat);
-const root = 'root/';
+const { ROOT_FOLDER = root } = 'src/constants';
 let mainWindow, disks;
 
 diskinfo.getDrives((err, drives) => {

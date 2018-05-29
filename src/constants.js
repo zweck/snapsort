@@ -1,1 +1,1 @@
-export const ROOT_FOLDER = 'root/';
+export const ROOT_FOLDER = '/home/';

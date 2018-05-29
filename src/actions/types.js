@@ -5,3 +5,4 @@ export const MOVE_REQUEST = 'MOVE_REQUEST';
 export const PASTE_REQUEST = 'PASTE_REQUEST';
 export const PASTE_REQUEST_DONE = 'PASTE_REQUEST_DONE';
 export const SAVE_DEST_PATH = 'SAVE_DEST_PATH';
+export const SELECT_IMAGE = 'SELECT_IMAGE';

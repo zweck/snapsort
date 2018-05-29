@@ -9,7 +9,8 @@ class BackButton extends Component {
 
 	levelBack() {
 		const { currentPath, updateCurrentPath } = this.props;
-		const newPath = currentPath.match(/^(.+\/)[^\/]+\/$/)[1];
+    const backLevel = currentPath.match(/^(.+\/)[^\/]+\/$/)
+		const newPath = backLevel ? backLevel[1] : '///';
 		console.log(newPath);
 		updateCurrentPath(newPath);
 	}

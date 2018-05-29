@@ -41,8 +41,14 @@ class FileExplorerTree extends Component {
 		);
 	}
 
+  isImage(file) {
+    return file.mimeType && file.mimeType.indexOf('image') > -1
+  }
+
 	updateCurrentPath(folder) {
-		!folder.isFile && this.props.updateCurrentPath(`${this.props.currentPath}${folder.title}/`);
+    const path = `${this.props.currentPath}${folder.title}`
+		!folder.isFile && this.props.updateCurrentPath(`${path}/`);
+    this.isImage(folder) && this.props.selectImage(path)
 	}
 
 	contextMenu(folderTitle) {
@@ -52,13 +58,13 @@ class FileExplorerTree extends Component {
 
 	renderFolders() {
 		return _.map(this.props.treeData, folder => {
-			return <a className="collection-item avatar root-item"
+			return <a className="collection-item root-item"
 								onContextMenu={() => {
 									this.contextMenu(folder.title)
 								}}
 								onClick={() => {this.updateCurrentPath(folder)}}
 								key={folder.title}>
-				<i className="material-icons circle light-green darken-2">{folder.isFile ? 'insert_drive_file' : 'folder'}</i>
+				<i className="material-icons icon">{folder.isFile ? 'insert_drive_file' : 'folder'}</i>
 				{folder.title}</a>
 		});
 	}
