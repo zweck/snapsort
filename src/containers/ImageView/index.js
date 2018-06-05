@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import path from 'path'
+import FontAwesomeIcon from '@fortawesome/react-fontawesome'
+import faMagic from '@fortawesome/fontawesome-free-solid/faMagic'
 
 import { Caman } from 'caman'
 
@@ -12,12 +14,13 @@ class ImageView extends Component {
   processImage (imagePath) {
     const selectImage = this.props.selectImage;
     Caman(imagePath, function () {
-      this.exposure(-10);
-      this.brightness(10);
-      this.contrast(20);
+      this.resize({
+        width: 1000
+      });
+      this.gamma(1.4);
+      this.brightness(10)
+      this.contrast(8)
       this.render(function () {
-        const tempImageName = imagePath.replace(new RegExp('/', 'g'), '_slash_');
-        const tempImagePath = `${APP_FOLDER}/tmp/${tempImageName}`;
         const img = this.toBase64('png');
         selectImage(img);
       });
@@ -27,11 +30,17 @@ class ImageView extends Component {
   render () {
     const { imagePath } = this.props;
     return !!( imagePath ) && (
-      <img
-        onClick={e => this.processImage(imagePath)}
-        style={{width: '100%', objectFitL: 'cover'}}
-        src={imagePath}
-      />
+      <div>
+				<button
+          onClick={e => this.processImage(imagePath)}
+          className="waves-effect waves-light btn">
+          <FontAwesomeIcon icon={faMagic} />  Magic
+        </button>
+        <img
+          style={{width: '100%', objectFitL: 'cover'}}
+          src={imagePath}
+        />
+      </div>
     )
   }
 };
