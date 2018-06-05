@@ -16,6 +16,7 @@
   "homepage": "https://bitbucket.org/gobankhust/electron-explorer#readme",
   "devDependencies": {
     "electron": "^1.7.11",
+    "electron-rebuild": "^1.7.3",
     "redux-logger": "^3.0.6"
   },
   "dependencies": {
@@ -31,8 +32,8 @@
     "lodash": "^4.17.4",
     "mime-types": "^2.1.17",
     "progress-stream": "^2.0.0",
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
     "react-redux": "^5.0.6",
     "react-router": "^4.0.0",
     "react-router-dom": "^4.0.0",

@@ -14,7 +14,9 @@ const styles = {
     flexDirection: 'row'
   },
   sideBar: {
-    flex: '1'
+    flex: '1',
+    height: '100vh',
+    borderRight: '1px solid #e0e0e0'
   },
   mainContent: {
     flex: '3'
